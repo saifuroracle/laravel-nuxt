@@ -1,0 +1,17 @@
+npx create-nuxt-app frontend
+
+
+
+ To get started:
+
+        cd frontend
+        npm run dev
+
+  To build & start for production:
+
+        cd frontend
+        npm run build
+        npm run start
+
+
+http://localhost:3000/ 
