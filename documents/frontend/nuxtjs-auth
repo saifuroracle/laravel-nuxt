@@ -1,0 +1,22 @@
+@nuxtjs-auth
+
+https://auth.nuxtjs.org/
+
+
+npm install --save-exact @nuxtjs/auth-next
+npm install @nuxtjs/auth-next @nuxtjs/axios
+
+
+
+Then, add @nuxtjs/auth-next to the modules section of nuxt.config.js:
+
+
+{
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
+  ],
+  auth: {
+    // Options
+  }
+}
