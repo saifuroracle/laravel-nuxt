@@ -77,10 +77,10 @@
             }
         },
         methods: {
-            loginPost(){
+            async loginPost(){
                     var _this = this;
                     console.log(this.loginDetails.email)
-                    axios.post('/api/auth/login',  this.loginDetails)
+                    await this.$axios.$post('/api/auth/login',  this.loginDetails)
                     .then(function (response) {
                         console.log('success !');
                         console.log(response.data.access_token);
