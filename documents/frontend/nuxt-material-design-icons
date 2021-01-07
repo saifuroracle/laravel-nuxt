@@ -4,5 +4,6 @@ npm i nuxt-material-design-icons
 
 //  nuxt.config.js
 {
-    modules: ['nuxt-material-design-icons']
+    modules: ['
+    ']
 }
