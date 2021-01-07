@@ -15,3 +15,5 @@ npx create-nuxt-app frontend
 
 
 http://localhost:3000/ 
+
+

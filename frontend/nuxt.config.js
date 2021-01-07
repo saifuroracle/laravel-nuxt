@@ -30,6 +30,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/fontawesome',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -37,13 +38,39 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
+    'nuxt-material-design-icons'
   ],
   auth: {
     // Options
+    // strategies:{
+    //   local: {
+    //     endpoints: {
+    //       login: {url: '/login', method: 'post'},
+    //       logout: {url: '/logout', method: 'post'},
+    //       user: {url: '/api/user', method: 'get', propertyName: false},
+    //     },
+    //     tokenRequired: false,
+    //     tokenType: false,
+    //   }
+    // }
+
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'login', method: 'post', propertyName: 'token' },
+          user: { url: 'user', method: 'get', propertyName: 'data' },
+          logout: false
+        }
+      }
+    }
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    // baseURL:'http://localhost:8000/',
+    baseURL: 'http://localhost:8000/api',
+    credentials: true,
+  },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {

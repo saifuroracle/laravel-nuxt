@@ -6,6 +6,12 @@
     "chunkName": "pages/inspire"
   },
   {
+    "name": "login",
+    "path": "/login",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\login.vue",
+    "chunkName": "pages/login"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\index.vue",
