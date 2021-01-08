@@ -4,9 +4,9 @@ import { normalizeURL, decode } from '@nuxt/ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _acf802a6 = () => interopDefault(import('..\\pages\\inspire.vue' /* webpackChunkName: "pages/inspire" */))
-const _45b62308 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
-const _137d4b65 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _3f18f9b0 = () => interopDefault(import('..\\pages\\inspire.vue' /* webpackChunkName: "pages/inspire" */))
+const _c29a6382 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
+const _55e9a9b0 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -26,15 +26,15 @@ export const routerOptions = {
 
   routes: [{
     path: "/inspire",
-    component: _acf802a6,
+    component: _3f18f9b0,
     name: "inspire"
   }, {
     path: "/login",
-    component: _45b62308,
+    component: _c29a6382,
     name: "login"
   }, {
     path: "/",
-    component: _137d4b65,
+    component: _55e9a9b0,
     name: "index"
   }],
 
