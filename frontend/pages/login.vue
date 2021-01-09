@@ -37,10 +37,12 @@
                                 <p v-if="loginDetailsError.error==true" class="text-danger mt-1 red--text lighten-1 text-center">{{ loginDetailsError.loginError }}</p>
 
                                 <v-card-actions>
-                                    <v-btn color="info" text>
-                                        <v-icon>person_add</v-icon>
-                                        Register
-                                    </v-btn>
+                                    <nuxt-link to="/register">
+                                      <v-btn color="info" text>
+                                          <v-icon>person_add</v-icon>
+                                          Register
+                                      </v-btn>
+                                    </nuxt-link>
                                     <v-spacer></v-spacer>
                                     <v-btn color="success" type="submit">
                                         <v-icon>verified_user</v-icon>
@@ -77,10 +79,10 @@
             }
         },
         methods: {
-            async loginPost(){
+            loginPost(){
                     var _this = this;
                     console.log(this.loginDetails.email)
-                    await this.$axios.$post('/api/auth/login',  this.loginDetails)
+                    this.$axios.$post('api/auth/login',  this.loginDetails)
                     .then(function (response) {
                         console.log('success !');
                         console.log(response.data.access_token);
