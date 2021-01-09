@@ -16,6 +16,7 @@ import nuxt_plugin_plugin_ae3fd542 from 'nuxt_plugin_plugin_ae3fd542' // Source:
 import nuxt_plugin_plugin_19b3baf5 from 'nuxt_plugin_plugin_19b3baf5' // Source: .\\vuetify\\plugin.js (mode: 'all')
 import nuxt_plugin_axios_697d6002 from 'nuxt_plugin_axios_697d6002' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_fontawesome_43f7a9c4 from 'nuxt_plugin_fontawesome_43f7a9c4' // Source: .\\fontawesome.js (mode: 'all')
+import nuxt_plugin_common_01588de5 from 'nuxt_plugin_common_01588de5' // Source: ..\\plugins\\mixins\\common.js (mode: 'all')
 import nuxt_plugin_auth_33cd7e24 from 'nuxt_plugin_auth_33cd7e24' // Source: .\\auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -190,6 +191,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_fontawesome_43f7a9c4 === 'function') {
     await nuxt_plugin_fontawesome_43f7a9c4(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_common_01588de5 === 'function') {
+    await nuxt_plugin_common_01588de5(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_33cd7e24 === 'function') {

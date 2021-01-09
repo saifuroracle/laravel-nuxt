@@ -21,6 +21,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/mixins/common.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -67,9 +68,12 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    // baseURL:'http://localhost:8000/',
     baseURL: 'http://localhost:8000/',
     credentials: true,
+  },
+
+  frontend: {
+    baseURL: 'http://localhost:3000/',
   },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
