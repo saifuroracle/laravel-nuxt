@@ -3,7 +3,7 @@
         <v-list-item-icon class="mx-0">
             <v-img
                 :aspect-ratio="16/9"
-                :src="'/imageResize?url='+product.productPicturePath+(isSMALT? '&sizeX=50&sizeY=50': '&sizeX=80&sizeY=80') || '/uploads/no_image.png'"
+                :src="'http://localhost:8000/imageResize?url='+product.productPicturePath+(isSMALT? '&sizeX=50&sizeY=50': '&sizeX=80&sizeY=80') || '/uploads/no_image.png'"
                 contain
                 :width="isSMALT? 50: 80"
                 @click="imageZoom(product.productPicturePath)"
@@ -67,6 +67,10 @@
 
 
 export default {
+    asyncData(context) {
+      console.log("=========================context=================")
+      console.log(context)
+    },
     components:{
            zoom_modal,
         },
