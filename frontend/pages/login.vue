@@ -60,7 +60,12 @@
 
 
 <script>
+    import footer_f from '@/components/footer.vue'
+
     export default {
+        components:{
+          footer_f
+        },
         name:'LoginComponent',
         mounted() {
         },
