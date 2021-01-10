@@ -1,12 +1,5 @@
 [
   {
-    "name": "inspire",
-    "path": "/inspire",
-    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\inspire.vue",
-    "chunkName": "pages/inspire",
-    "_name": "_acf802a6"
-  },
-  {
     "name": "login",
     "path": "/login",
     "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\login.vue",

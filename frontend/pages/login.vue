@@ -83,19 +83,19 @@
                     var _this = this;
                     console.log(this.loginDetails.email)
                     this.$axios.$post('api/auth/login',  this.loginDetails)
-                    .then(function (response) {
+                    .then(response => {
                         console.log('success !');
-                        console.log(response.data.access_token);
-                        // window.location.href = '/home/home?token='+response.data.access_token;
-                        let token = response.data.access_token;
+
+                        let token = response.access_token;
                         localStorage.setItem('token', token);
-                        window.location.href = '/home/home';
+                        window.location.href = '/';
                     })
-                    .catch(function (error) {
+                    .catch(error =>  {
                         console.log('failure !');
                         console.log(error.response);
+                        console.log(error.response.data);
                         console.log(error.response.data.error);
-                        // _this.loginDetailsError = { error:true, loginError: error.response.data.error };
+                        // _this.loginDetailsError = { error:true, loginError: error.response.error };
                         _this.loginDetailsError = { error:true, loginError: "Invalid email or password" };
                     })
             },
