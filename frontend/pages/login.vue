@@ -55,16 +55,19 @@
                 </v-flex>
             </v-layout>
         </v-container>
+
+        <latestbestsellingtopratedproducts_f />
+
     </v-app>
 </template>
 
 
 <script>
-    import footer_f from '@/components/footer.vue'
+    import latestbestsellingtopratedproducts_f from '@/components/latestbestsellingtopratedproducts.vue'
 
     export default {
         components:{
-          footer_f
+          latestbestsellingtopratedproducts_f
         },
         name:'LoginComponent',
         mounted() {
@@ -90,8 +93,8 @@
                     this.$axios.$post('api/auth/login',  this.loginDetails)
                     .then(response => {
                         console.log('success !');
-
                         let token = response.access_token;
+                        console.log('token = '+ token)
                         localStorage.setItem('token', token);
                         window.location.href = '/';
                     })

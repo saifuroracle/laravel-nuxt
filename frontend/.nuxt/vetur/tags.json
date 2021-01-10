@@ -1,14 +1,26 @@
 {
-  "Footer": {
-    "description": "Auto imported from components/footer.vue"
+  "Latestbestsellingtopratedproducts": {
+    "description": "Auto imported from components/latestbestsellingtopratedproducts.vue"
   },
-  "LazyFooter": {
-    "description": "Auto imported from components/footer.vue"
+  "LazyLatestbestsellingtopratedproducts": {
+    "description": "Auto imported from components/latestbestsellingtopratedproducts.vue"
+  },
+  "ProductcarddetailsSnippet": {
+    "description": "Auto imported from components/productcarddetails_snippet.vue"
+  },
+  "LazyProductcarddetailsSnippet": {
+    "description": "Auto imported from components/productcarddetails_snippet.vue"
   },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
   },
   "LazyVuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
+  },
+  "Zoom": {
+    "description": "Auto imported from components/zoom.vue"
+  },
+  "LazyZoom": {
+    "description": "Auto imported from components/zoom.vue"
   }
 }

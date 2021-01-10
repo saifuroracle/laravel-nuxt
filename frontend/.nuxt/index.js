@@ -1,5 +1,5 @@
 import Vue from 'vue'
-
+import Vuex from 'vuex'
 import Meta from 'vue-meta'
 import ClientOnly from 'vue-client-only'
 import NoSsr from 'vue-no-ssr'
@@ -9,6 +9,7 @@ import NuxtError from '..\\layouts\\error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
+import { createStore } from './store.js'
 
 /* Plugins */
 
@@ -17,6 +18,7 @@ import nuxt_plugin_plugin_1eb61f98 from 'nuxt_plugin_plugin_1eb61f98' // Source:
 import nuxt_plugin_axios_07afa7ff from 'nuxt_plugin_axios_07afa7ff' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_fontawesome_16a14001 from 'nuxt_plugin_fontawesome_16a14001' // Source: .\\fontawesome.js (mode: 'all')
 import nuxt_plugin_common_01588de5 from 'nuxt_plugin_common_01588de5' // Source: ..\\plugins\\mixins\\common.js (mode: 'all')
+import nuxt_plugin_algorithm_313eaa62 from 'nuxt_plugin_algorithm_313eaa62' // Source: ..\\plugins\\mixins\\algorithm.js (mode: 'all')
 import nuxt_plugin_auth_4aa0f55e from 'nuxt_plugin_auth_4aa0f55e' // Source: .\\auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -55,8 +57,22 @@ Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n
 
 const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
+const originalRegisterModule = Vuex.Store.prototype.registerModule
+const baseStoreOptions = { preserveState: process.client }
+
+function registerModule (path, rawModule, options = {}) {
+  return originalRegisterModule.call(this, path, rawModule, { ...baseStoreOptions, ...options })
+}
+
 async function createApp(ssrContext, config = {}) {
   const router = await createRouter(ssrContext)
+
+  const store = createStore(ssrContext)
+  // Add this.$router into store actions/mutations
+  store.$router = router
+
+  // Fix SSR caveat https://github.com/nuxt/nuxt.js/issues/3757#issuecomment-414689141
+  store.registerModule = registerModule
 
   // Create Root instance
 
@@ -65,6 +81,7 @@ async function createApp(ssrContext, config = {}) {
   const app = {
     head: {"titleTemplate":"%s - frontend","title":"frontend","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002Fbootstrap@5.0.0-beta1\u002Fdist\u002Fcss\u002Fbootstrap.min.css"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"script":[{"src":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002Fbootstrap@5.0.0-beta1\u002Fdist\u002Fjs\u002Fbootstrap.bundle.min.js","type":"text\u002Fjavascript"}],"style":[]},
 
+    store,
     router,
     nuxt: {
       defaultTransition,
@@ -109,6 +126,9 @@ async function createApp(ssrContext, config = {}) {
     ...App
   }
 
+  // Make app available into store via this.app
+  store.app = app
+
   const next = ssrContext ? ssrContext.next : location => app.router.push(location)
   // Resolve route
   let route
@@ -121,6 +141,7 @@ async function createApp(ssrContext, config = {}) {
 
   // Set context to app.context
   await setContext(app, {
+    store,
     route,
     next,
     error: app.nuxt.error.bind(app),
@@ -147,6 +168,9 @@ async function createApp(ssrContext, config = {}) {
       app.context[key] = value
     }
 
+    // Add into store
+    store[key] = app[key]
+
     // Check if plugin not already installed
     const installKey = '__nuxt_' + key + '_installed__'
     if (Vue[installKey]) {
@@ -167,6 +191,13 @@ async function createApp(ssrContext, config = {}) {
 
   // Inject runtime config as $config
   inject('config', config)
+
+  if (process.client) {
+    // Replace store state before plugins execution
+    if (window.__NUXT__ && window.__NUXT__.state) {
+      store.replaceState(window.__NUXT__.state)
+    }
+  }
 
   // Add enablePreview(previewData = {}) in context for plugins
   if (process.static && process.client) {
@@ -195,6 +226,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_common_01588de5 === 'function') {
     await nuxt_plugin_common_01588de5(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_algorithm_313eaa62 === 'function') {
+    await nuxt_plugin_algorithm_313eaa62(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_4aa0f55e === 'function') {
@@ -230,6 +265,7 @@ async function createApp(ssrContext, config = {}) {
   }
 
   return {
+    store,
     app,
     router
   }
