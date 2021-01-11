@@ -17,11 +17,12 @@ Vue.mixin({
   },
 
   mounted() {
-      window.addEventListener('resize', () => {
-          this.windowWidth = window.innerWidth
-          this.windowHeight = window.innerHeight
-      });
-      this.current_url = this.baseUrl+this.$route.path
+    window.addEventListener('resize', () => {
+        this.windowWidth = window.innerWidth
+        this.windowHeight = window.innerHeight
+    });
+    this.current_url = this.baseUrl+this.$route.path
+
   },
   methods: {
       gotorouterview(link){
@@ -467,7 +468,8 @@ Vue.mixin({
       },
 
 
-  }
+  },
+
 
 })
 
