@@ -66,6 +66,7 @@
     import latestbestsellingtopratedproducts_f from '@/components/latestbestsellingtopratedproducts.vue'
 
     export default {
+
         components:{
           latestbestsellingtopratedproducts_f
         },

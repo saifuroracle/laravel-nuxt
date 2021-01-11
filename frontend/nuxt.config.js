@@ -82,9 +82,6 @@ export default {
     credentials: true,
   },
 
-  frontend: {
-    baseURL: 'http://localhost:3000/',
-  },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {

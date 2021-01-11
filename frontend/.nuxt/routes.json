@@ -3,21 +3,18 @@
     "name": "login",
     "path": "/login",
     "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\login.vue",
-    "chunkName": "pages/login",
-    "_name": "_45b62308"
+    "chunkName": "pages/login"
   },
   {
     "name": "register",
     "path": "/register",
     "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\register.vue",
-    "chunkName": "pages/register",
-    "_name": "_e9d46e40"
+    "chunkName": "pages/register"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_137d4b65"
+    "chunkName": "pages/index"
   }
 ]

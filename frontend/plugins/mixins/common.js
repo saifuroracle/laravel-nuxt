@@ -5,14 +5,17 @@ import Vue from 'vue'
 
 
 Vue.mixin({
+
   data() {
     return {
         windowWidth: 0,
         windowHeight: 0,
+        backend_baseUrl: 'http://localhost:8000',
         baseUrl: process.env.BASE_URL || 'http://localhost:3000',
         current_url: '',
     }
   },
+
   mounted() {
       window.addEventListener('resize', () => {
           this.windowWidth = window.innerWidth
