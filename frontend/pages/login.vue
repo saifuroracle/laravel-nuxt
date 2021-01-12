@@ -57,6 +57,7 @@
         </v-container>
 
         <latestbestsellingtopratedproducts_f />
+        <footer_f />
 
     </v-app>
 </template>
@@ -64,11 +65,12 @@
 
 <script>
     import latestbestsellingtopratedproducts_f from '@/components/latestbestsellingtopratedproducts.vue'
+    import footer_f from '@/components/footer.vue'
 
     export default {
 
         components:{
-          latestbestsellingtopratedproducts_f
+          latestbestsellingtopratedproducts_f, footer_f
         },
         name:'LoginComponent',
         mounted() {
