@@ -14,7 +14,7 @@
                                 <v-container fluid class="pa-0 ma-0">
                                     <v-layout wrap justify-center>
                                         <div>
-                                            <v-img
+                                            <!-- <v-img
                                                 :src="zoomPath || '/uploads/no_image.png'"
                                                 style="max-width:86vw"
                                             >
@@ -27,7 +27,15 @@
                                                     <v-progress-circular indeterminate color="orange"></v-progress-circular>
                                                     </v-row>
                                                 </template>
-                                            </v-img>
+                                            </v-img> -->
+                                            <img
+                                             :src="zoomPath || '/uploads/no_image.png'"
+                                              style="max-width:86vw"
+                                              alt="Image"
+
+                                              >
+
+
                                         </div>
                                     </v-layout>
                                 </v-container>
