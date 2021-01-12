@@ -56,23 +56,23 @@
     </v-list-item>
 </template>
 
+
+
 <script>
 
-
-
 // zoom
-    import zoom_modal from '@/components/zoom.vue'
-    import zoomMixins from '@/plugins/mixins/zoomMixins.js'
+import zoom_modal from '@/components/zoom.vue'
+import zoomMixins from '@/plugins/mixins/zoomMixins.js'
+import responsiveMixins from '@/plugins/mixins/responsiveMixins.js'
 
-    import Vue from "vue"
-    Vue.mixin(zoomMixins)
+
 
 export default {
 
     components:{
            zoom_modal,
         },
-    mixins: [ ],
+    mixins: [zoomMixins, responsiveMixins ],
     data() {
         return {
 

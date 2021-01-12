@@ -382,9 +382,13 @@ Vue.mixin({
 
   },
   computed: {
-
-
-
+      // frontend & backend
+      isFrontend() {
+        return !(this.$router.currentRoute.path).includes('/admin/')
+      },
+      isBackend() {
+        return (this.$router.currentRoute.path).includes('/admin/')
+      },
   },
 
 

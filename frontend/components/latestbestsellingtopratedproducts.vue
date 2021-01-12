@@ -55,12 +55,15 @@
 </template>
 
 
+
 <script>
+
 import productcarddetails_snippet from '@/components/productcarddetails_snippet.vue'
 import responsiveMixins from '@/plugins/mixins/responsiveMixins.js'
 
-    import Vue from "vue"
-    Vue.mixin(responsiveMixins)
+
+// import Vue from "vue"
+// Vue.mixin(responsiveMixins)
 
 
 export default {
@@ -73,6 +76,7 @@ export default {
         this.getTopratedProducts();
 
     },
+    mixins:[responsiveMixins],
     data() {
         return {
             latestProducts:[],

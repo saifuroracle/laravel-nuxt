@@ -96,6 +96,7 @@
 </template>
 
 <script>
+import responsiveMixins from '@/plugins/mixins/responsiveMixins.js'
 export default {
     props:[
         'zoomDialog',
@@ -106,6 +107,7 @@ export default {
             fullscreen:false,
         }
     },
+    mixins:[responsiveMixins]
 }
 </script>
 

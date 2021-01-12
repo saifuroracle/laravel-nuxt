@@ -12,7 +12,7 @@ export default{
 
     setTimeout(() => {
       this.windowSetter()
-    }, 3000)
+    }, 2000)
   },
   updated() {
 
@@ -99,13 +99,6 @@ export default{
           return this.windowWidth > 0
       },
 
-      // frontend & backend
-      isFrontend() {
-          return !(this.$router.currentRoute.path).includes('/admin/')
-      },
-      isBackend() {
-          return (this.$router.currentRoute.path).includes('/admin/')
-      },
 
 
   },
