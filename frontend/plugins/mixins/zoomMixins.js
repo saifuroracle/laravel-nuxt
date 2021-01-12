@@ -1,5 +1,6 @@
-<script>
-    export default {
+
+
+export default{
         data() {
             return {
                 zoomDialog: false,
@@ -20,5 +21,5 @@
 
 
         },
-    }
-</script>
+}
+

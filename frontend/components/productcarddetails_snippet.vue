@@ -62,16 +62,17 @@
 
 // zoom
     import zoom_modal from '@/components/zoom.vue'
-    import zoom_mixin from '@/plugins/mixins/zoomMixins.vue'
+    import zoomMixins from '@/plugins/mixins/zoomMixins.js'
 
-
+    import Vue from "vue"
+    Vue.mixin(zoomMixins)
 
 export default {
 
     components:{
            zoom_modal,
         },
-    mixins: [ zoom_mixin],
+    mixins: [ ],
     data() {
         return {
 
