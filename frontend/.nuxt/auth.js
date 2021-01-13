@@ -44,16 +44,19 @@ export default function (ctx, inject) {
   $auth.registerStrategy('local', new LocalScheme($auth, {
   "endpoints": {
     "login": {
-      "url": "login",
+      "url": "/api/auth/login",
       "method": "post",
-      "propertyName": "token"
+      "propertyName": "meta.token"
     },
     "user": {
-      "url": "user",
+      "url": "/api/auth/me",
       "method": "get",
       "propertyName": "data"
     },
-    "logout": false
+    "logout": {
+      "url": "logout",
+      "method": "post"
+    }
   },
   "name": "local"
 }))

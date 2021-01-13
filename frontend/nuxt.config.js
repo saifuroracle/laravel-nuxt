@@ -70,13 +70,34 @@ export default {
 
     strategies: {
       local: {
-        endpoints: {
-          login: { url: 'login', method: 'post', propertyName: 'token' },
-          user: { url: 'user', method: 'get', propertyName: 'data' },
-          logout: false
-        }
+        endpoints:{
+          login: {
+            url: '/api/auth/login',
+            method: 'post',
+            propertyName: "meta.token"
+          },
+          user: {
+            url: '/api/auth/me',
+            method: 'get',
+            propertyName: "data"
+          },
+          logout: {
+            url: 'logout',
+            method: 'post'
+          }
+        },
       }
     }
+
+    // strategies: {
+    //   local: {
+    //     endpoints: {
+    //       login: { url: 'login', method: 'post', propertyName: 'meta.token' },
+    //       user: { url: 'user', method: 'get', propertyName: 'data' },
+    //       logout: { url: 'logout', method: 'post' }
+    //     }
+    //   }
+    // }
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

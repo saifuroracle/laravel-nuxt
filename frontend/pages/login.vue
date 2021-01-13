@@ -11,7 +11,7 @@
                         </v-card-title>
 
                         <v-card-text>
-                            <v-form  @submit.prevent="loginPost()" >
+                            <v-form  @submit.prevent="loginPostWithAuth()" >
                                 <v-text-field
                                     name="email"
                                     label="Email"
@@ -125,6 +125,12 @@
                         _this.loginDetailsError = { error:true, loginError: "Invalid email or password" };
                     })
             },
+            async loginPostWithAuth(){
+              await this.$auth.loginWith("local", {
+                data: this.loginDetails
+              })
+              this.$router.push('/');
+            }
         },
     }
 </script>

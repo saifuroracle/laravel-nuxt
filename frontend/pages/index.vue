@@ -9,7 +9,7 @@
         <!-- <ourservices_f/> -->
         <!-- <contactus_f/> -->
         <v-spacer></v-spacer>
-        <latestviewsproducts_f></latestviewsproducts_f>
+        <!-- <latestviewsproducts_f></latestviewsproducts_f> -->
         <latestbestsellingtopratedproducts_f ></latestbestsellingtopratedproducts_f >
         <footer_f></footer_f>
 
