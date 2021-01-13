@@ -51,9 +51,11 @@
             fixed
             bottom
             right
-            color="orange"
+
             @click="topFunction"
             v-bind="btnSize"
+            color="white"
+            style="background: orange;"
           >
             <v-icon>keyboard_arrow_up</v-icon>
       </v-btn>

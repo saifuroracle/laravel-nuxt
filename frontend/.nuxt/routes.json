@@ -2,19 +2,19 @@
   {
     "name": "login",
     "path": "/login",
-    "component": "C:\\\\Users\\\\saifur\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\login.vue",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\login.vue",
     "chunkName": "pages/login"
   },
   {
     "name": "register",
     "path": "/register",
-    "component": "C:\\\\Users\\\\saifur\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\register.vue",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\register.vue",
     "chunkName": "pages/register"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\saifur\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\index.vue",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\index.vue",
     "chunkName": "pages/index"
   }
 ]
