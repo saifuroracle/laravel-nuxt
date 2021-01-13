@@ -16,7 +16,6 @@ import { createStore } from './store.js'
 import nuxt_plugin_plugin_cb456c48 from 'nuxt_plugin_plugin_cb456c48' // Source: .\\components\\plugin.js (mode: 'all')
 import nuxt_plugin_plugin_1eb61f98 from 'nuxt_plugin_plugin_1eb61f98' // Source: .\\vuetify\\plugin.js (mode: 'all')
 import nuxt_plugin_axios_07afa7ff from 'nuxt_plugin_axios_07afa7ff' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_fontawesome_16a14001 from 'nuxt_plugin_fontawesome_16a14001' // Source: .\\fontawesome.js (mode: 'all')
 import nuxt_plugin_common_01588de5 from 'nuxt_plugin_common_01588de5' // Source: ..\\plugins\\mixins\\common.js (mode: 'all')
 import nuxt_plugin_algorithm_313eaa62 from 'nuxt_plugin_algorithm_313eaa62' // Source: ..\\plugins\\mixins\\algorithm.js (mode: 'all')
 import nuxt_plugin_auth_4aa0f55e from 'nuxt_plugin_auth_4aa0f55e' // Source: .\\auth.js (mode: 'all')
@@ -79,7 +78,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"titleTemplate":"%s - frontend","title":"frontend","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002Fbootstrap@5.0.0-beta1\u002Fdist\u002Fcss\u002Fbootstrap.min.css"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"script":[{"src":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002Fbootstrap@5.0.0-beta1\u002Fdist\u002Fjs\u002Fbootstrap.bundle.min.js","type":"text\u002Fjavascript"}],"style":[]},
+    head: {"titleTemplate":"%s - frontend","title":"frontend","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002Fbootstrap@5.0.0-beta1\u002Fdist\u002Fcss\u002Fbootstrap.min.css"},{"rel":"stylesheet","href":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Ffont-awesome\u002F5.15.1\u002Fcss\u002Fall.min.css"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"script":[{"src":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002Fbootstrap@5.0.0-beta1\u002Fdist\u002Fjs\u002Fbootstrap.bundle.min.js","type":"text\u002Fjavascript"},{"src":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Ffont-awesome\u002F5.15.1\u002Fjs\u002Fall.min.js","type":"text\u002Fjavascript"}],"style":[]},
 
     store,
     router,
@@ -218,10 +217,6 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_axios_07afa7ff === 'function') {
     await nuxt_plugin_axios_07afa7ff(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_fontawesome_16a14001 === 'function') {
-    await nuxt_plugin_fontawesome_16a14001(app.context, inject)
   }
 
   if (typeof nuxt_plugin_common_01588de5 === 'function') {
