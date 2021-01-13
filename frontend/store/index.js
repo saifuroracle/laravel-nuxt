@@ -194,8 +194,8 @@
 
   export const actions = {
       checkIsLoggedIn({commit}){
-          // console.log('checkIsLoggedIn called')
-          // console.log('checkIsLoggedIn called and token = '+localStorage.getItem('token'))
+          console.log('checkIsLoggedIn called')
+          console.log('checkIsLoggedIn called and token = '+localStorage.getItem('token'))
 
           this.$axios.$post('/api/auth/me?token='+localStorage.getItem('token'))
           .then(function (response) {

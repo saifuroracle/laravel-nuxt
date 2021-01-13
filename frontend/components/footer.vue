@@ -263,21 +263,9 @@ export default {
             return this.isSMALT?{'x-small':true} : {};
         },
 
-        userInfo(){
-          return this.$store.state.userInfo
-        },
 
-        isLoggedIn(){
-          return this.$store.getters.getIsLoggedIn
-
-        }
   },
-  async asyncData({ store }) {
-    let {data} = await this.$axios.$post('/api/auth/me?token='+localStorage.getItem('token'))
 
-    this.$axios.$post('/api/auth/me?token='+localStorage.getItem('token'))
-    store.dispatch(checkIsLoggedIn)
-  },
 };
 </script>
 

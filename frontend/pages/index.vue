@@ -47,9 +47,30 @@
             this.topFunction()
 
         },
+        asyncData({ store }) {
+
+          console.log("=======================called=========================")
+          // let {data} = await this.$axios.$post('/api/auth/me?token='+localStorage.getItem('token'))
+
+          // this.$axios.$post('/api/auth/me?token='+localStorage.getItem('token'))
+          // store.dispatch('checkIsLoggedIn')
+
+        },
+        computed: {
+          userInfo(){
+            return this.$store.state.userInfo
+          },
+
+          isLoggedIn(){
+            return this.$store.getters.getIsLoggedIn
+
+          }
+        },
         metaInfo: {
             titleTemplate: '%s Home'
         }
+
+
 
     }
 </script>
