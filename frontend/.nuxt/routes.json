@@ -6,6 +6,12 @@
     "chunkName": "pages/login"
   },
   {
+    "name": "pages",
+    "path": "/pages",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\pages.vue",
+    "chunkName": "pages/pages"
+  },
+  {
     "name": "register",
     "path": "/register",
     "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\register.vue",

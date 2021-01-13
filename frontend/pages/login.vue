@@ -96,10 +96,25 @@
                     this.$axios.$post('/api/auth/login',  this.loginDetails)
                     .then(response => {
                         console.log('success !');
+                        console.log(response.access_token);
+                        // window.location.href = '/home/home?token='+response.access_token;
                         let token = response.access_token;
-                        console.log('token = '+ token)
                         localStorage.setItem('token', token);
-                        window.location.href = '/';
+                        _this.$store.dispatch('checkIsLoggedIn')
+                        // window.location.href = '/';
+
+                        _this.loading=false;
+                        _this.loginDetailsError = { error:false, loginError: "" , email: '' , password:''};
+                        _this.loginDetailsValid = { valid:true, validMessage: 'Successful ! Please wait..' }
+
+                        if (_this.$route.query.redirectedFrom){
+                            _this.$router.go(-1)
+                        }
+                        else{
+                            _this.$router.push('/');
+                        }
+
+                        // _this.$router.go(-1);
                     })
                     .catch(error =>  {
                         console.log('failure !');
