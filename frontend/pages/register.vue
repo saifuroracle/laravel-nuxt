@@ -126,20 +126,22 @@
         </v-sheet>
         <v-spacer></v-spacer>
 
-        <!-- <latestbestsellingtopratedproducts_f></latestbestsellingtopratedproducts_f>
-        <footer_f></footer_f> -->
+        <latestbestsellingtopratedproducts_f></latestbestsellingtopratedproducts_f>
+        <footer_f></footer_f>
     </v-app>
 </template>
 
 
 <script>
     // import subheading_f from './subheading.vue'
-    // import footer_f from './footer.vue'
-    // import latestbestsellingtopratedproducts_f from './latestbestsellingtopratedproducts.vue'
+    import latestbestsellingtopratedproducts_f from '@/components/latestbestsellingtopratedproducts.vue'
+    import footer_f from '@/components/footer.vue'
+    import responsiveMixins from '@/plugins/mixins/responsiveMixins.js'
 
     export default {
         components:{
-            // subheading_f, footer_f,latestbestsellingtopratedproducts_f
+            // subheading_f,
+            footer_f,latestbestsellingtopratedproducts_f
         },
         mounted() {
             this.topFunction()
@@ -176,6 +178,7 @@
                 searchInput: ""
             }
         },
+        mixins:[responsiveMixins],
         methods: {
             // getAreas(){
             //     var _this = this;

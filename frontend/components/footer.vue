@@ -218,7 +218,7 @@ export default {
     },
     getPages(){
         var _this = this;
-        this.$axios.$get('api/getPages')
+        this.$axios.$get('/api/getPages')
         .then(function (response) {
             _this.pages = response.data;
         })

@@ -93,7 +93,7 @@
             loginPost(){
                     var _this = this;
                     console.log(this.loginDetails.email)
-                    this.$axios.$post('api/auth/login',  this.loginDetails)
+                    this.$axios.$post('/api/auth/login',  this.loginDetails)
                     .then(response => {
                         console.log('success !');
                         let token = response.access_token;

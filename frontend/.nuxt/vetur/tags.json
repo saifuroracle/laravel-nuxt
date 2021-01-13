@@ -1,4 +1,16 @@
 {
+  "AdvertisementSlider": {
+    "description": "Auto imported from components/advertisement_slider.vue"
+  },
+  "LazyAdvertisementSlider": {
+    "description": "Auto imported from components/advertisement_slider.vue"
+  },
+  "Browsebybrands": {
+    "description": "Auto imported from components/browsebybrands.vue"
+  },
+  "LazyBrowsebybrands": {
+    "description": "Auto imported from components/browsebybrands.vue"
+  },
   "Footer": {
     "description": "Auto imported from components/footer.vue"
   },
