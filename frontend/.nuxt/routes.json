@@ -3,24 +3,28 @@
     "name": "login",
     "path": "/login",
     "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\login.vue",
-    "chunkName": "pages/login"
+    "chunkName": "pages/login",
+    "_name": "_45b62308"
   },
   {
     "name": "pages",
     "path": "/pages",
     "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\pages.vue",
-    "chunkName": "pages/pages"
+    "chunkName": "pages/pages",
+    "_name": "_79594957"
   },
   {
     "name": "register",
     "path": "/register",
     "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\register.vue",
-    "chunkName": "pages/register"
+    "chunkName": "pages/register",
+    "_name": "_e9d46e40"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\User\\\\Desktop\\\\laravel-nuxt\\\\frontend\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_137d4b65"
   }
 ]

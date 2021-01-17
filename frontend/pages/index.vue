@@ -57,14 +57,14 @@
 
         },
         computed: {
-          userInfo(){
-            return this.$store.state.userInfo
-          },
+          // userInfo(){
+          //   return this.$store.state.userInfo
+          // },
 
-          isLoggedIn(){
-            return this.$store.getters.getIsLoggedIn
+          // isLoggedIn(){
+          //   return this.$store.getters.getIsLoggedIn
 
-          }
+          // }
         },
         metaInfo: {
             titleTemplate: '%s Home'

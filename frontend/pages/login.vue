@@ -126,10 +126,24 @@
                     })
             },
             async loginPostWithAuth(){
-              await this.$auth.loginWith("local", {
-                data: this.loginDetails
-              })
-              this.$router.push('/');
+
+              try {
+                    let response = await this.$auth.loginWith('local', {
+                        data: this.loginDetails
+
+                    });
+                    this.loading=false;
+                    this.loginDetailsError = { error:false, loginError: "" , email: '' , password:''};
+                    this.loginDetailsValid = { valid:true, validMessage: 'Successful ! Please wait..' }
+
+              }
+              catch (e) {
+                this.loginDetailsError = {
+                  error:true, loginError: "Invalid email or password"
+                };
+              }
+
+              // this.$router.push('/');
             }
         },
     }

@@ -69,23 +69,23 @@ export default {
     // }
 
     strategies: {
+
       local: {
+        token: {
+          property: 'access_token',
+          maxAge: 60 * 60
+        },
         endpoints:{
           login: {
             url: '/api/auth/login',
             method: 'post',
-            propertyName: "meta.token"
           },
           user: {
-            url: '/api/auth/me',
+            url: '/api/auth/getUserWithToken',
             method: 'get',
-            propertyName: "data"
           },
-          logout: {
-            url: 'logout',
-            method: 'post'
-          }
-        },
+          logout: false
+        }
       }
     }
 

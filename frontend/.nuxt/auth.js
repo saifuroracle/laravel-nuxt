@@ -42,21 +42,20 @@ export default function (ctx, inject) {
   // Register strategies
   // local
   $auth.registerStrategy('local', new LocalScheme($auth, {
+  "token": {
+    "property": "access_token",
+    "maxAge": 3600
+  },
   "endpoints": {
     "login": {
       "url": "/api/auth/login",
-      "method": "post",
-      "propertyName": "meta.token"
+      "method": "post"
     },
     "user": {
-      "url": "/api/auth/me",
-      "method": "get",
-      "propertyName": "data"
+      "url": "/api/auth/getUserWithToken",
+      "method": "get"
     },
-    "logout": {
-      "url": "logout",
-      "method": "post"
-    }
+    "logout": false
   },
   "name": "local"
 }))
