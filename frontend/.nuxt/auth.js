@@ -46,14 +46,20 @@ export default function (ctx, inject) {
     "property": "access_token",
     "maxAge": 3600
   },
+  "user": {
+    "property": "user",
+    "autoFetch": true
+  },
   "endpoints": {
     "login": {
       "url": "/api/auth/login",
-      "method": "post"
+      "method": "post",
+      "propertyName": "token"
     },
     "user": {
       "url": "/api/auth/getUserWithToken",
-      "method": "get"
+      "method": "get",
+      "propertyName": false
     },
     "logout": false
   },

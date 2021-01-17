@@ -135,7 +135,7 @@
                     this.loading=false;
                     this.loginDetailsError = { error:false, loginError: "" , email: '' , password:''};
                     this.loginDetailsValid = { valid:true, validMessage: 'Successful ! Please wait..' }
-
+                    this.$router.push('/');
               }
               catch (e) {
                 this.loginDetailsError = {
@@ -143,7 +143,6 @@
                 };
               }
 
-              // this.$router.push('/');
             }
         },
     }

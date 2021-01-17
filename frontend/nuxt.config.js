@@ -55,19 +55,6 @@ export default {
     'nuxt-material-design-icons'
   ],
   auth: {
-    // Options
-    // strategies:{
-    //   local: {
-    //     endpoints: {
-    //       login: {url: '/login', method: 'post'},
-    //       logout: {url: '/logout', method: 'post'},
-    //       user: {url: '/api/user', method: 'get', propertyName: false},
-    //     },
-    //     tokenRequired: false,
-    //     tokenType: false,
-    //   }
-    // }
-
     strategies: {
 
       local: {
@@ -75,29 +62,26 @@ export default {
           property: 'access_token',
           maxAge: 60 * 60
         },
+        user: {
+          property: 'user',
+          autoFetch: true
+        },
         endpoints:{
           login: {
             url: '/api/auth/login',
             method: 'post',
+            propertyName: 'token'
           },
           user: {
             url: '/api/auth/getUserWithToken',
             method: 'get',
+            propertyName: false
           },
           logout: false
         }
       }
     }
 
-    // strategies: {
-    //   local: {
-    //     endpoints: {
-    //       login: { url: 'login', method: 'post', propertyName: 'meta.token' },
-    //       user: { url: 'user', method: 'get', propertyName: 'data' },
-    //       logout: { url: 'logout', method: 'post' }
-    //     }
-    //   }
-    // }
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
