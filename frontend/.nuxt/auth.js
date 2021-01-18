@@ -47,7 +47,7 @@ export default function (ctx, inject) {
     "maxAge": 3600
   },
   "user": {
-    "property": "user",
+    "property": false,
     "autoFetch": true
   },
   "endpoints": {

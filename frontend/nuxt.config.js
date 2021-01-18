@@ -55,6 +55,7 @@ export default {
     'nuxt-material-design-icons'
   ],
   auth: {
+
     strategies: {
 
       local: {
@@ -63,7 +64,8 @@ export default {
           maxAge: 60 * 60
         },
         user: {
-          property: 'user',
+          // property: 'user',
+          property: false,
           autoFetch: true
         },
         endpoints:{
@@ -77,7 +79,10 @@ export default {
             method: 'get',
             propertyName: false
           },
-          logout: { url: '/api/auth/logout', method: 'POST' }
+          logout: {
+            url: '/api/auth/logout',
+            method: 'POST'
+          }
         },
 
       }
