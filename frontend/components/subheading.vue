@@ -19,7 +19,8 @@ import topsystembar from '@/components/topsystembar.vue'
 
 export default {
     mounted() {
-        window.addEventListener("scroll", this.handleScroll);
+      this.getToken()
+      window.addEventListener("scroll", this.handleScroll);
 
     },
     components: {
@@ -27,6 +28,7 @@ export default {
     },
     data() {
         return {
+            token: '',
 
         }
     },
@@ -41,6 +43,7 @@ export default {
                 this.menumargintop = 'mt89px'
             }
         },
+
 
     },
 

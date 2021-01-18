@@ -35,6 +35,11 @@ Vue.mixin({
       },
 
 
+      getToken(){
+        this.token = (localStorage.getItem("auth._token.local")).replace("Bearer ", "");
+      },
+
+
       // ==========================string related==================================
       // ==========================string related==================================
 
