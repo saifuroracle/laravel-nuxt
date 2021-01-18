@@ -29,6 +29,24 @@
   "LazyProductcarddetailsSnippet": {
     "description": "Auto imported from components/productcarddetails_snippet.vue"
   },
+  "Search": {
+    "description": "Auto imported from components/search.vue"
+  },
+  "LazySearch": {
+    "description": "Auto imported from components/search.vue"
+  },
+  "Subheading": {
+    "description": "Auto imported from components/subheading.vue"
+  },
+  "LazySubheading": {
+    "description": "Auto imported from components/subheading.vue"
+  },
+  "Topsystembar": {
+    "description": "Auto imported from components/topsystembar.vue"
+  },
+  "LazyTopsystembar": {
+    "description": "Auto imported from components/topsystembar.vue"
+  },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
   },

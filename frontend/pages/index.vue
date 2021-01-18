@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <!-- <subheading_f></subheading_f> -->
+        <subheading_f></subheading_f>
         <advertisement_slider_f></advertisement_slider_f>
         <!-- <featuredproducts_f></featuredproducts_f> -->
         <!-- <homerandomproducts_f></homerandomproducts_f> -->
@@ -21,7 +21,7 @@
 
 
 <script>
-    // import subheading_f from './subheading.vue'
+    import subheading_f from '@/components/subheading.vue'
     // import products_f from './products.vue'
     import browsebybrands_f from '@/components/browsebybrands.vue'
     // import featuredproducts_f from './featuredproducts.vue'
@@ -39,7 +39,7 @@
     export default {
         components:{
             // subheading_f, advertisement_slider_f, homelastnnumberproducts_f, latestviewsproducts_f, featuredproducts_f,
-             advertisement_slider_f, browsebybrands_f,  footer_f, latestbestsellingtopratedproducts_f
+             subheading_f, advertisement_slider_f, browsebybrands_f,  footer_f, latestbestsellingtopratedproducts_f
             // ourservices_f, advertisement_slider_f, contactus_f, products_f,
         },
         mixins: [],
