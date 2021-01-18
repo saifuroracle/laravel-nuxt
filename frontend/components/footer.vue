@@ -31,20 +31,21 @@
         <v-btn class="mx-auto" color="primary" text>Back to top</v-btn>
       </v-row> -->
 
-      <!-- <v-btn
+      <v-btn
             fab
             dark
             fixed
             bottom
             right
-            color="orange"
+            color="white"
+            style="background: orange;"
             @click="gotorouterview('/chat')"
             :style="isSMALT?'margin-right:38px;':'margin-right:66px;'"
             v-bind="btnSize"
-            v-if="userInfo.id"
+            v-if="$auth.loggedIn"
           >
             <v-icon>chat</v-icon>
-      </v-btn> -->
+      </v-btn>
       <v-btn
             fab
             dark
