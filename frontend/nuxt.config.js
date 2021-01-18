@@ -77,8 +77,9 @@ export default {
             method: 'get',
             propertyName: false
           },
-          logout: false
-        }
+          logout: { url: '/api/auth/logout', method: 'POST' }
+        },
+
       }
     }
 

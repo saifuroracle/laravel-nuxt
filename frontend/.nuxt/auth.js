@@ -61,7 +61,10 @@ export default function (ctx, inject) {
       "method": "get",
       "propertyName": false
     },
-    "logout": false
+    "logout": {
+      "url": "/api/auth/logout",
+      "method": "POST"
+    }
   },
   "name": "local"
 }))

@@ -1,6 +1,13 @@
 <template>
     <div class="mt-6">
 
+      <div v-if="$auth.loggedIn">
+        profile
+      </div>
+      <div v-else>
+        login
+      </div>
+
       <v-sheet
             elevation="0"
             max-width="100%"
