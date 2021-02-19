@@ -4,6 +4,202 @@
 
             <topsystembar></topsystembar>
 
+            <v-card>
+
+
+                <v-app-bar app elevation="1" class="px-5" color="rgba(255, 165, 0, 0.38)"  v-if="isMDAGT" clipped-left>
+
+
+                    <v-app-bar-nav-icon class="ml-1">
+                        <v-img height="60" aspect-ratio contain
+                         :src="'/imageResize?url='+companyinfo.logoPath+'&sizeX=130&sizeY=100'"
+                         @click="gotorouterview('/')">
+                            <template v-slot:placeholder>
+                                <v-row
+                                class="fill-height ma-0"
+                                align="center"
+                                justify="center"
+                                >
+                                    <v-progress-circular indeterminate color="orange"></v-progress-circular>
+                                </v-row>
+                            </template>
+                        </v-img>
+                    </v-app-bar-nav-icon>
+
+                    <v-spacer></v-spacer>
+
+                    <!-- search component -->
+                    <v-flex>
+                        <search ></search >
+                    </v-flex>
+                    <!-- search component -->
+
+                    <v-spacer></v-spacer>
+
+
+
+                    <!-- <cart_wishlist_compare > </cart_wishlist_compare > -->
+
+
+
+
+                    <v-btn
+                        outlined
+                        color="indigo darken-1 ml-1"
+                        v-if="isLoggedIn==false"
+                        @click="gotorouterview('/login')"
+                        >
+                            Sign In
+                    </v-btn>
+
+                    <!-- <v-menu
+                        offset-y
+                        transition="slide-x-transition"
+                        bottom
+                         v-if="isLoggedIn"
+                        >
+                        <template v-slot:activator="{ on }">
+                            <v-btn text icon>
+                                <v-avatar v-if="isLoggedIn" color="indigo" v-on="on" size="30">
+                                    <v-icon color="white" v-if="!userInfo.photoPath">person</v-icon>
+                                    <img
+                                        :src="userInfo.photoPath"
+                                        :alt="((userInfo.name).match(/\b(\w)/g)).join('')"
+                                        v-if="userInfo.photoPath"
+                                    >
+                                </v-avatar>
+                            </v-btn>
+                        </template>
+                        <v-list min-width="220">
+                            <profile_menu></profile_menu>
+                        </v-list>
+                    </v-menu> -->
+
+                </v-app-bar>
+
+            </v-card>
+
+            <v-card style=" margin-bottom:40px;">
+                <v-app-bar app elevation="1" v-if="isMDAGT" :class="menumargintop" color="rgba(255, 165, 0, 0.38)"    dense height="35" clipped-left>
+                    <v-spacer></v-spacer>
+                    <v-toolbar dense elevation="0" color="rgba(0,0,0,0)">
+
+
+
+
+
+                        <!-- home -->
+                        <!-- home -->
+                        <v-btn
+                            text
+                            class="text-capitalize text-decoration-none"
+                            to="/"  @click="gotorouterview('/')"
+                        >
+                            <v-icon left>home</v-icon>
+                            Home
+                        </v-btn>
+
+
+
+                        <!-- Categories -->
+                        <!-- Categories -->
+                        <v-menu offset-y  transition="slide-x-transition"  bottom>
+                            <template v-slot:activator="{ on}">
+                                <v-btn
+                                    v-on="on"
+                                    text
+                                    class="text-capitalize"
+                                >
+                                    Categories
+                                    <v-icon>keyboard_arrow_down</v-icon>
+                                </v-btn>
+                            </template>
+                            <v-list>
+                                <v-treeview
+                                    :items="categoriesTree"
+                                    item-key="categoryId"
+                                    shaped
+                                    open-on-click
+                                    dense
+                                    activatable
+                                    color="orange"
+                                >
+                                    <template slot="label" slot-scope="{ item }">
+                                        <a   @click="setSearchCategoryProducts(item.categorySlug)" class="black--text tree-node"  >{{item.category}}</a>
+                                    </template>
+                                </v-treeview>
+                            </v-list>
+                        </v-menu>
+
+
+
+                        <v-btn
+                            text
+                            class="text-capitalize"
+                            @click="gotorouterview('/brands'); "
+                            to="/brands"
+                        >
+                            Brands
+                        </v-btn>
+
+
+                        <!-- Limited Editions -->
+                        <!-- Limited Editions -->
+                        <v-btn
+                            text
+                            class="text-capitalize"
+                            @click="gotorouterview('/productlist?limitededitions=1'); qpClear();"
+                            to="/productlist?limitededitions=1"
+                        >
+                            Limited Editions
+                        </v-btn>
+
+
+                        <!-- New Arrivals -->
+                        <!-- New Arrivals -->
+                        <v-btn
+                            text
+                            class="text-capitalize"
+                            @click="gotorouterview('/productlist?newarrivals=1'); qpClear();"
+                            to="/productlist?newarrivals=1"
+                        >
+                            New Arrivals
+                        </v-btn>
+
+
+                        <!-- Gift -->
+                        <!-- Gift -->
+                        <v-menu offset-y  transition="slide-x-transition"  bottom>
+                            <template v-slot:activator="{ on}">
+                                <v-btn
+                                    v-on="on"
+                                    text
+                                    class="text-capitalize"
+                                >
+                                    Gift Set
+                                    <v-icon>keyboard_arrow_down</v-icon>
+                                </v-btn>
+                            </template>
+                            <v-list>
+                                <v-list-item
+                                    v-for="(item, i) in gifttypes"
+                                    :key="i"
+                                    @click="gotorouterview('/productlist?giftTypeSlug='+item.giftTypeSlug); qpClear(); qpGiftTypeSlug=item.giftTypeSlug"
+                                    :class="item.giftTypeSlug==qpGiftTypeSlug?'list-active-item':''"
+                                    dense
+                                    >
+                                    <v-list-item-title >{{ item.giftType }}</v-list-item-title>
+                                </v-list-item>
+                            </v-list>
+                        </v-menu>
+
+
+
+                    </v-toolbar>
+                    <v-spacer></v-spacer>
+                </v-app-bar>
+            </v-card>
+
             <v-card width="960" class=" mx-auto" v-if="isSMALT" >
                 <v-app-bar fixed>
                     <v-toolbar dense elevation="0">
@@ -93,27 +289,7 @@
                             </v-menu>
                         </v-list-item>
 
-                        <!-- <v-list-item>
-                            <v-menu offset-y transition="slide-x-transition" bottom >
-                                <template v-slot:activator="{ on }">
-                                    <v-list-item-icon  v-on="on">
-                                        <v-icon>business</v-icon>
-                                    </v-list-item-icon>
-                                    <v-list-item-title v-on="on">Brand</v-list-item-title>
-                                </template>
-                                <v-list min-width="220">
-                                    <v-list-item
-                                        v-for="(item, i) in brands"
-                                        :key="i"
-                                        @click="gotorouterview('/productlist?brandSlug='+item.brandSlug); qpClear(); qpBrandSlug=item.brandSlug"
-                                        :class="item.brandSlug==qpBrandSlug?'list-active-item':''"
-                                        dense
-                                        >
-                                        <v-list-item-title >{{ item.brand }}</v-list-item-title>
-                                    </v-list-item>
-                                </v-list>
-                            </v-menu>
-                        </v-list-item> -->
+
 
                         <v-list-item  to="/brands"  @click="gotorouterview('/brands')">
                             <v-list-item-icon>
@@ -168,7 +344,6 @@ import responsiveMixins from '@/plugins/mixins/responsiveMixins.js'
 
 export default {
     mounted() {
-      this.getToken()
       window.addEventListener("scroll", this.handleScroll);
 
       this.getCategories();
@@ -181,7 +356,6 @@ export default {
     },
     data() {
         return {
-            token: '',
             subheading_dropdown_list : false,
 
             menumargintop:'mt89px',

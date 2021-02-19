@@ -64,8 +64,8 @@
             },
             search(){
                 if ((this.searchInput || []).length<3) {
-                    this.$store.dispatch('setSearchLoadingFalse')
-                    this.$store.commit('SET_SEARCH_PRODUCTS', []);
+                    // this.$store.dispatch('setSearchLoadingFalse')
+                    // this.$store.commit('SET_SEARCH_PRODUCTS', []);
                 }
                 else{
                     this.gotorouterview('/productlist?searchInput='+this.searchInput)

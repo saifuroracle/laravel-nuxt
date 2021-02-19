@@ -9,10 +9,15 @@ Vue.mixin({
         backend_baseUrl: 'http://localhost:8000',
         baseUrl: 'http://localhost:3000',
         // current_url: '',
-    }
+        token: '',
+        isLoggedIn: false,
+      }
   },
 
   mounted() {
+    this.getToken()
+
+    this.isLoggedIn = this.$auth.loggedIn;
     // this.current_url = this.baseUrl+this.$route.path
   },
   methods: {
@@ -36,7 +41,9 @@ Vue.mixin({
 
 
       getToken(){
-        this.token = (localStorage.getItem("auth._token.local")).replace("Bearer ", "");
+        if (localStorage) {
+          this.token = (localStorage.getItem("auth._token.local")).replace("Bearer ", "");
+        }
       },
 
 
