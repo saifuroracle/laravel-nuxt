@@ -15,7 +15,7 @@ Vue.mixin({
   },
 
   mounted() {
-    this.getToken()
+    // this.getToken()
 
     this.isLoggedIn = this.$auth.loggedIn;
     // this.current_url = this.baseUrl+this.$route.path
@@ -40,11 +40,11 @@ Vue.mixin({
       },
 
 
-      getToken(){
-        if (localStorage) {
-          this.token = (localStorage.getItem("auth._token.local")).replace("Bearer ", "");
-        }
-      },
+      // getToken(){
+      //   if (localStorage) {
+      //     this.token = (localStorage.getItem("auth._token.local")).replace("Bearer ", "");
+      //   }
+      // },
 
 
       // ==========================string related==================================
